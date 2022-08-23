@@ -1,0 +1,27 @@
+current path:
+arduino->hairless MIDI (serial to MIDI converter) -> loopMIDI (MIDI port) -> Reaper
+
+	[ardrumo could be future option for Mac / communicating with Garageband]
+
+
+Command bytes: (>127)
+	Note off = 128
+	Note On = 144
+	Pitchbend = 224
+
+Data: notes/velocity (<127)
+command->data (note)->data (velocity)
+144 60 127 = note on, 60(Middle C), 127 (max velocity, which means loudness)
+
+Note off:
+	128, 60(example note), 0000
+	144, 60, 0 (What we'll likely be using) 
+
+
+FirstMIDItest -> HairlessMIDI -> loopMIDI -> Reaper
+	In Reaper: 
+		In Options->Preferences->MIDI Devices, make sure the MIDI port you created in loopMIDI i			is enabled as an input device
+		Create a new track
+			in : Record(input) -> force format(MIDI)
+			IN FX: input -> MIDI -> loopMIDI port
+			FX: VSTi: ReaSynth (this is the actual MIDI instrument)
