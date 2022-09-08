@@ -1,0 +1,41 @@
+	Theramintest1
+
+Ultrasonic range from my desk to the ceiling
+0 -> 189 cm
+	That's pretty high to realistically put your hand tho
+	X value (independent)
+MIDI note range
+0 -> 127
+	Y value (dependent) 
+
+For now keep the same, turn off if above 180 cm
+
+
+===
+	Theramin test2
+
+value was only going to about 92 in the test
+
+---
+
+For some reason, when merely testing on serial monitor, ceiling is at about 187 centiments, yet when using this same distance variable as the note in MIDI, it only seems to go up to 92 
+
+	There's some kind of overwriting problem here. It's not changing from one note to another, but rather keeping all of them, an this might be causing a side effect where the distance/note value only goes up to 92.
+
+	It's also widly changing the velocity
+
+----
+
+Fixed the velocity issue by introducing delay. Experimented with top and bottom. For now, delay at bottom. 
+
+
+
+-------
+
+Sounds below a "30" are too low to, at least with the velocity set to 1. For now, let's just take 30 on, then. 
+
+
+----
+
+
+Remember : 

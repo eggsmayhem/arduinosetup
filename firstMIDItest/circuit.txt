@@ -1,0 +1,2 @@
+No circuit here, just plug board in through USB
+All the sudden my serial monitor is showing weird symbols. The code hasn't changed. I don't believe anything else has, either. Let's try to diagnose. 
